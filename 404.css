@@ -1,0 +1,156 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  min-height:100vh;
+  overflow:hidden;
+}
+
+.error-page{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  position:relative;
+}
+
+/* Background Video */
+.bg-video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+
+/* Dark Overlay */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.58);
+  z-index:-1;
+}
+
+.error-card{
+  max-width:520px;
+  width:100%;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.25);
+  backdrop-filter:blur(15px);
+  border-radius:22px;
+  padding:45px 30px;
+  text-align:center;
+  color:#fff;
+  box-shadow:0 25px 60px rgba(0,0,0,0.45);
+  animation:fadeUp 1s ease;
+}
+
+.error-icon{
+  font-size:58px;
+  margin-bottom:15px;
+  animation:float 2s infinite ease-in-out;
+}
+
+.error-card h1{
+  font-size:110px;
+  line-height:1;
+  color:#fff;
+  text-shadow:0 0 25px rgba(255,255,255,0.5);
+}
+
+.error-card h2{
+  font-size:28px;
+  margin:15px 0;
+}
+
+.error-card p{
+  color:#f1f1f1;
+  line-height:1.6;
+  margin-bottom:30px;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.home-btn,
+.back-btn{
+  padding:13px 24px;
+  border-radius:30px;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+  font-size:15px;
+}
+
+.home-btn{
+  background:#fff;
+  color:#d90429;
+}
+
+.back-btn{
+  background:#111;
+  color:#fff;
+}
+
+.home-btn:hover,
+.back-btn:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes float{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-12px);
+  }
+}
+
+@media(max-width:600px){
+  .error-card{
+    padding:35px 20px;
+  }
+
+  .error-card h1{
+    font-size:80px;
+  }
+
+  .error-card h2{
+    font-size:22px;
+  }
+
+  .buttons{
+    flex-direction:column;
+  }
+
+  .home-btn,
+  .back-btn{
+    width:100%;
+  }
+}
